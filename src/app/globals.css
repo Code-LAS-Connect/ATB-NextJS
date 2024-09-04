@@ -94,7 +94,7 @@ header{
 }
 
 /* secciones main */
-.cn, .nt, .ct{
+.cn, .nt, .ct, .sn{
   display: flex;
   justify-content: center;
 }
