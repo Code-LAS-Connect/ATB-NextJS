@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { Button } from "@/components/ui/button"; // Ajusta la ruta según tu estructura
+import { Button } from "@/components/ui/button"; 
 
 interface WhatsappButtonProps {
   onClick?: () => void;
