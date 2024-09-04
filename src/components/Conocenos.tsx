@@ -20,7 +20,7 @@ export function Conocenos({ conocenosRef }: ConocenosProps) {
           </div>
           <div className="md:w-1/2">
             <p className="text-lg mb-4 text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam autem, vero tempora voluptatum facere rerum commodi illum nesciunt molestias tempore. Enim inventore qui, nemo rem quibusdam molestiae mollitia? Distinctio, similique.
+            Somos TravelsDreams, expertos en crear experiencias de viaje todo incluido. Nuestra pasión es hacer que cada aventura sea perfecta, cuidando cada detalle para que solo te preocupes por disfrutar. Descubre con nosotros la forma más cómoda y emocionante de viajar.
             </p>
             <div className="flex space-x-4">
               <div className="flex items-center">
