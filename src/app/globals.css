@@ -86,3 +86,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Navbar */
+header{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* secciones main */
+.cn, .nt, .ct{
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+.ft{
+  display: flex;
+  justify-content: space-evenly;
+}

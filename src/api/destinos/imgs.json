@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name_destino": "Bali",
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+    },
+    {
+        "id": 2,
+        "name_destino": "Santorini",
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+    },
+    {
+        "id": 3,
+        "name_destino": "Maldivas",
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+    },
+    {
+        "id": 4,
+        "name_destino": "Cancún",
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+    },
+    {
+        "id": 5,
+        "name_destino": "Tokio",
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+    },
+    {
+        "id": 6,
+        "name_destino": "Paris",
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+    }
+]
