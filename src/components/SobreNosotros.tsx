@@ -1,12 +1,10 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import sectionsData from '../api/sobreNosotros/SobreNosotros.json';
+import personasData from '../api/sobreNosotros/equipoTrabajo.json'
 
-export function SobreNosotros({ sobreNosotrosRef }:any) {
-  const sections = [
-    { title: 'Misión', content: 'Nuestra misión es proporcionar experiencias...' },
-    { title: 'Visión', content: 'Aspiramos a ser líderes en la industria del turismo...' },
-    { title: 'Términos Legales', content: 'Nos comprometemos a operar con total transparencia...' }
-  ];
+export function SobreNosotros({ sobreNosotrosRef }: any) {
+  const { sections } = sectionsData;
 
   return (
     <section id="sobre-nosotros" ref={sobreNosotrosRef} className="py-16 bg-white animate-fadeIn">
@@ -23,6 +21,24 @@ export function SobreNosotros({ sobreNosotrosRef }:any) {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Nuestro Equipo</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {Object.keys(personasData).map((key) => {
+            const person = personasData[key];
+            return (
+              <Card key={key}>
+                <CardHeader>
+                  <CardTitle className="text-blue-600">{person[0].name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <img src={person[1].url} alt={person[0].name} className="w-full h-48 object-cover mb-4" />
+                  <p className="text-gray-700">{person[2].info}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

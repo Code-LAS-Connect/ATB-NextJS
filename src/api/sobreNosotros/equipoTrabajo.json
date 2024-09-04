@@ -1,0 +1,35 @@
+interface Person {
+    name: string;
+    url: string;
+    info: string;
+}
+  
+    "person1": [
+        {"name?": "Junior Ochoa"},
+        {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
+        {"info?": "afggasgg"}
+    ],
+
+    "person2":[
+        {"name?": "Manuel Moscote"},
+        {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
+        {"info?": "afggasgg"}
+    ],
+
+    "person3":[
+        {"name?": "Esteban Salazar"},
+        {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
+        {"info?": "afggasgg"}
+    ],
+
+    "person4":[
+        {"name?": "Ronald Perea"},
+        {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
+        {"info?": "afggasgg"}
+    ],
+
+    "person5":[
+        {"name?": "Jose Zuleta"},
+        {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
+        {"info?": "afggasgg"}
+    ]
