@@ -3,7 +3,7 @@ import { Plane, Facebook, Twitter, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="py-8 bg-blue-800 text-white">
+    <footer className="ft py-8 bg-blue-800 text-white">
       <div className="container flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center space-x-2">
           <Plane className="h-6 w-6 text-white" />

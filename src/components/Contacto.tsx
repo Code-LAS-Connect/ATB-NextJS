@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 export function Contacto({ contactoRef }:any) {
   return (
-    <section id="contacto" ref={contactoRef} className="py-16 bg-gradient-to-r from-blue-100 to-purple-100 animate-fadeIn">
+    <section id="contacto" ref={contactoRef} className="ct py-16 bg-gradient-to-r from-blue-100 to-purple-100 animate-fadeIn">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Contacto</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

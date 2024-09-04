@@ -7,7 +7,7 @@ interface ConocenosProps {
 
 export function Conocenos({ conocenosRef }: ConocenosProps) {
   return (
-    <section id="conocenos" ref={conocenosRef} className="py-16 bg-white animate-fadeIn">
+    <section id="conocenos" ref={conocenosRef} className="cn py-16 bg-white animate-fadeIn">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Conócenos</h2>
         <div className="flex flex-col md:flex-row items-center gap-8">
