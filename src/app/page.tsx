@@ -8,6 +8,8 @@ import { Destinos } from '../components/Destinos';
 import { SobreNosotros } from '../components/SobreNosotros';
 import { Contacto } from '../components/Contacto';
 import { Footer } from '../components/Footer';
+import WhatsappButton from '../components/WhatsappButton';
+
 
 export default function Page() {
   const conocenosRef = useRef(null);
@@ -36,6 +38,11 @@ export default function Page() {
       <SobreNosotros sobreNosotrosRef={sobreNosotrosRef} />
       <Contacto contactoRef={contactoRef} />
       <Footer />
+      <WhatsappButton 
+        onClick={() => {
+          window.open('https://wa.me/1234567890', '_blank');
+        }}
+      />
     </div>
   );
 }
