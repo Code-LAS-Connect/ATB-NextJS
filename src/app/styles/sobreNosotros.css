@@ -1,49 +1,77 @@
+/* Contenedor de la tarjeta */
+.containerUsers {
+  perspective: 100%;
+}
+
 .card {
-    position: relative;
-    width: 100%;
-    height: 18em; /* Ajusta el tamaño de la tarjeta según sea necesario */
-    transform-style: preserve-3d;
-    transition: transform 0.3s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 15em; /* Ajusta según sea necesario */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
-  
-  .card:hover {
-    transform: rotateX(-180deg); /* Gira la tarjeta en el eje Y */
-  }
-  
-  .front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Oculta la cara trasera cuando está girada */
-  }
 
-.foto {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+.containerUsers:hover .card {
+  transform: rotateY(180deg);
 }
-  
-  .front {
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    backface-visibility: hidden;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-  }
-  
-  .back {
-    /* Estilos para la cara posterior */
-    transform: rotateY(180deg); /* Gira la cara posterior para que esté oculta inicialmente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #f0f0f0; /* Ajusta el color de fondo según sea necesario */
-    padding: 20px;
-    width: 80%;
-    height: 100%;
-    border-radius: 50%;
 
-  }
-  
+/* Frente de la tarjeta */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Estilo para la parte frontal */
+.front {
+  display: flex;
+  width: 50%;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Cambia según tu diseño */
+}
+
+.foto{
+  border-radius: 50%;
+}
+
+/* Estilo para la parte trasera */
+.back {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 80%;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Cambia según tu diseño */
+  transform: rotateY(180deg);
+}
+
+.name{
+  font-size: 20px;
+}
+
+.info {
+  font-size: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.containerName{
+  display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  font-size: 15px;
+  justify-content: center;
+}
+
+.nuestroEquipo{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
