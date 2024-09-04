@@ -1,7 +1,11 @@
 import React from 'react';
 import { Users, MapPin } from 'lucide-react';
 
-export function Conocenos({ conocenosRef }:any) {
+interface ConocenosProps {
+  conocenosRef: React.RefObject<HTMLDivElement>;
+}
+
+export function Conocenos({ conocenosRef }: ConocenosProps) {
   return (
     <section id="conocenos" ref={conocenosRef} className="py-16 bg-white animate-fadeIn">
       <div className="container">
@@ -16,7 +20,7 @@ export function Conocenos({ conocenosRef }:any) {
           </div>
           <div className="md:w-1/2">
             <p className="text-lg mb-4 text-gray-700">
-              En TravelDreams, nos apasiona crear experiencias de viaje inolvidables...
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam autem, vero tempora voluptatum facere rerum commodi illum nesciunt molestias tempore. Enim inventore qui, nemo rem quibusdam molestiae mollitia? Distinctio, similique.
             </p>
             <div className="flex space-x-4">
               <div className="flex items-center">
