@@ -1,9 +1,4 @@
-interface Person {
-    name: string;
-    url: string;
-    info: string;
-}
-  
+{  
     "person1": [
         {"name?": "Junior Ochoa"},
         {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
@@ -33,3 +28,4 @@ interface Person {
         {"url?": "https://static.vecteezy.com/system/resources/previews/003/428/270/non_2x/businessman-explain-pose-character-design-free-vector.jpg"},
         {"info?": "afggasgg"}
     ]
+}

@@ -23,23 +23,6 @@ export function SobreNosotros({ sobreNosotrosRef }: any) {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Nuestro Equipo</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {Object.keys(personasData).map((key) => {
-            const person = personasData[key];
-            return (
-              <Card key={key}>
-                <CardHeader>
-                  <CardTitle className="text-blue-600">{person[0].name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <img src={person[1].url} alt={person[0].name} className="w-full h-48 object-cover mb-4" />
-                  <p className="text-gray-700">{person[2].info}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
