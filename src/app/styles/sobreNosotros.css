@@ -48,7 +48,7 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0; /* Cambia según tu diseño */
+  background-color: #f3e8ff var(--tw-gradient-to-position); /* Cambia según tu diseño */
   transform: rotateY(180deg);
 }
 
