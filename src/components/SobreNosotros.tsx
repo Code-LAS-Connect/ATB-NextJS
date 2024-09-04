@@ -7,14 +7,14 @@ import sectionsData from '../api/sobreNosotros/visionMision.json';
 
 export function SobreNosotros({ sobreNosotrosRef }: any) {
   const { sections } = sectionsData;
-  const texts = textosData;
+  const { texts }= textosData;
   const personas = personasData;
 
   return (
     <section id="sobre-nosotros" ref={sobreNosotrosRef} className="sn py-16 bg-white animate-fadeIn">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Sobre Nosotros</h2>
-        {texts.texts.map((texto) => (
+        {texts.map((texto) => (
           <div  className='containerName' key={texto.id}>
             <p>{texto.texto1}</p>
             <p>{texto.texto2}</p>
