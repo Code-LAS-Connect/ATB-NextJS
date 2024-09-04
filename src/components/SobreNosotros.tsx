@@ -37,6 +37,7 @@ export function SobreNosotros({ sobreNosotrosRef }: any) {
             </div>
           ))}
         </div>
+        <h2 className="nuestroEquipo text-3xl font-bold text-center mb-12 text-blue-800">Mision, Vision y Terminos</h2>
         <div className="nuestroEquipo grid grid-cols-1 md:grid-cols-3 gap-8">
           {sections.map((section) => (
             <Card key={section.title}>
