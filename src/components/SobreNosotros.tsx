@@ -1,15 +1,34 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import '../app/styles/sobreNosotros.css';
 import sectionsData from '../api/sobreNosotros/SobreNosotros.json';
-import personasData from '../api/sobreNosotros/equipoTrabajo.json'
+import personasData from '../api/sobreNosotros/equipoTrabajo.json';
 
 export function SobreNosotros({ sobreNosotrosRef }: any) {
   const { sections } = sectionsData;
+  const personas = personasData;
 
   return (
     <section id="sobre-nosotros" ref={sobreNosotrosRef} className="py-16 bg-white animate-fadeIn">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Sobre Nosotros</h2>
+
+        <h2 className="text-3xl font-bold text-center mb-12 text-blue-800">Nuestro Equipo</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {personas.map((persona) => (
+          <div className='containerUsers' key={persona.id}>
+          <div className='card'>
+            <div className='front'>
+              <img className='foto' src={persona['url?']} alt={persona['name?']} />
+            </div>
+          <div className='back'>
+            <h1>{persona['name?']}</h1>
+            <p>{persona['info?']}</p>
+          </div>
+        </div>
+      </div>
+      ))}
+    </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {sections.map((section) => (
             <Card key={section.title}>
@@ -22,6 +41,7 @@ export function SobreNosotros({ sobreNosotrosRef }: any) {
             </Card>
           ))}
         </div>
+
 
       </div>
     </section>

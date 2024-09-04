@@ -1,0 +1,49 @@
+.card {
+    position: relative;
+    width: 100%;
+    height: 18em; /* Ajusta el tamaño de la tarjeta según sea necesario */
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+  
+  .card:hover {
+    transform: rotateX(-180deg); /* Gira la tarjeta en el eje Y */
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera cuando está girada */
+  }
+
+.foto {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+  
+  .front {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+  }
+  
+  .back {
+    /* Estilos para la cara posterior */
+    transform: rotateY(180deg); /* Gira la cara posterior para que esté oculta inicialmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f0f0f0; /* Ajusta el color de fondo según sea necesario */
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;
+
+  }
+  
