@@ -1,5 +1,5 @@
 import React from 'react'
-import { Plane } from 'lucide-react'
+import { TreePalm } from 'lucide-react'
 
 export function Navbar({ scrollToSection, conocenosRef, destinosRef, sobreNosotrosRef, contactoRef }: any) {
   return (
@@ -7,7 +7,7 @@ export function Navbar({ scrollToSection, conocenosRef, destinosRef, sobreNosotr
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex flex-1 items-center justify-between">
           <a className="flex items-center space-x-2" href="/">
-            <Plane className="h-6 w-6 text-blue-600" />
+            <TreePalm  className="h-6 w-6 text-blue-600" />
             <span className="font-bold text-blue-600 text-xl">ATB</span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
