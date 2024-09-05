@@ -27,7 +27,7 @@ const Slide: React.FC<SlideProps> = ({
       style={{ objectFit: "cover" }}
       className="w-full h-full"
     />
-    <div className="absolute inset-0 bg-gradient-to-r from-green-700/70 to-amber-700/70 flex items-center justify-center">
+    <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 flex items-center justify-center">
       <div
         className="text-center text-white max-w-lg mx-auto"
         style={{ transform: "translateX(-300px)" }}
