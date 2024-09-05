@@ -59,15 +59,15 @@ export function Navbar({
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex flex-1 items-center justify-between">
           <a className="flex items-center space-x-2" href="/">
-            <TreePalm className={`h-6 w-6 transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`} />
-            <span className={`font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>
+            <TreePalm className={`h-6 w-6 transition-colors duration-100 ${isScrolled ? 'text-black' : 'text-white'}`} />
+            <span className={`font-bold text-xl transition-colors duration-100 ${isScrolled ? 'text-black' : 'text-white'}`}>
               ATB
             </span>
           </a>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <button
               onClick={() => headerRef && scrollToSection(headerRef)}
-              className={`transition-colors duration-100 ${
+              className={`transition-colors duration-10 ${
                 activeSection === '' ? 'font-bold text-yellow-400' : (isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300')
               }`}
             >
@@ -75,7 +75,7 @@ export function Navbar({
             </button>
             <button
               onClick={() => scrollToSection(conocenosRef)}
-              className={`transition-colors duration-100 ${
+              className={`transition-colors duration-10 ${
                 activeSection === 'conocenos' ? 'font-bold text-yellow-400' : (isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300')
               }`}
             >
@@ -83,7 +83,7 @@ export function Navbar({
             </button>
             <button
               onClick={() => scrollToSection(destinosRef)}
-              className={`transition-colors duration-100 ${
+              className={`transition-colors duration-10 ${
                 activeSection === 'destinos' ? 'font-bold text-yellow-400' : (isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300')
               }`}
             >
@@ -91,7 +91,7 @@ export function Navbar({
             </button>
             <button
               onClick={() => scrollToSection(sobreNosotrosRef)}
-              className={`transition-colors duration-100 ${
+              className={`transition-colors duration-10 ${
                 activeSection === 'sobreNosotros' ? 'font-bold text-yellow-400' : (isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300')
               }`}
             >
@@ -99,7 +99,7 @@ export function Navbar({
             </button>
             <button
               onClick={() => scrollToSection(contactoRef)}
-              className={`transition-colors duration-100 ${
+              className={`transition-colors duration-10 ${
                 activeSection === 'contacto' ? 'font-bold text-yellow-400' : (isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300')
               }`}
             >
