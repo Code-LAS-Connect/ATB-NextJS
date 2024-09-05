@@ -33,8 +33,8 @@ export function Destinos({ destinosRef }:any) {
                 </DialogHeader>
                 <div className="mt-4">
                   <img
-                    src={`https://source.unsplash.com/800x400/?${destino}`}
-                    alt={`Vista panorámica de ${destino}`}
+                    src={`${destino.img_url}`}
+                    alt={`Vista panorámica de ${destino.name_destino}`}
                     className="w-full rounded-lg"
                   />
                   <p className="mt-4 text-sm text-gray-500">

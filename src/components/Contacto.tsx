@@ -25,15 +25,15 @@ export function Contacto({ contactoRef }:any) {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Mail className="h-5 w-5 text-blue-600" />
-                    <span>Guatavita@traveldreams.com</span>
+                    <span>atb_company@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <MapPin className="h-5 w-5 text-blue-600" />
-                    <span>Guatavita</span>
+                    <span>El Bagre</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Clock className="h-5 w-5 text-blue-600" />
-                    <span>Lun - Vie, 92 AM - 63 PM</span>
+                    <span>Lun - Vie, 9 AM - 6 PM</span>
                   </div>
                 </div>
               </CardContent>

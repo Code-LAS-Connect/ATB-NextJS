@@ -11,8 +11,8 @@ export function Hero({ scrollToSection, destinosRef }:any) {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/70 to-purple-600/70 flex items-center justify-center">
         <div className="text-center text-white">
-          <h1 className="text-5xl font-bold mb-4 drop-shadow-lg animate-fadeInDown">Descubre el Paraíso</h1>
-          <p className="text-xl mb-8 drop-shadow animate-fadeInUp">Vive experiencias inolvidables en los destinos más hermosos del mundo</p>
+          <h1 className="text-5xl font-bold mb-4 drop-shadow-lg animate-fadeInDown">Descubre hermosos lugares con ATB</h1>
+          <p className="text-xl mb-8 drop-shadow animate-fadeInUp">Vive experiencias inolvidables en los destinos más relajantes de nuestro municipio</p>
           <Button size="lg" className="bg-yellow-400 text-blue-900 hover:bg-yellow-300" onClick={() => scrollToSection(destinosRef)}>Explora Ahora</Button>
         </div>
       </div>
