@@ -5,6 +5,7 @@ import Slide from './Slide'; // Ajusta la ruta según tu estructura de carpetas
 import ArrowButton from './ArrowButton'; // Ajusta la ruta según tu estructura de carpetas
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import fake_db from '@/api/destinos/imgs.json'
 
 interface HeaderProps {
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
@@ -15,22 +16,24 @@ interface HeaderProps {
 const Header = forwardRef<HTMLDivElement, HeaderProps>(({ scrollToSection, destinosRef, headerRef }, ref) => {
   const sliderRef = useRef<Slider>(null);
 
-  const slidesData = [
-    {
-      imageSrc: "/header-1.jpg",
-      alt: "Playa paradisíaca",
-      text1: "Descubre hermosos lugares con ATB",
-      text2: "Vive experiencias inolvidables",
-      text3: "en los destinos más relajantes",
-    },
-    {
-      imageSrc: "/header-1.jpg",
-      alt: "Otra vista de la playa",
-      text1: "Explora el mundo",
-      text2: "con nuestro servicio",
-      text3: "de viajes exclusivos",
-    },
-  ];
+  const destinos = fake_db
+
+  // const slidesData = [
+  //   {
+  //     imageSrc: "/header-1.jpg",
+  //     alt: "Playa paradisíaca",
+  //     text1: "Descubre hermosos lugares con ATB",
+  //     text2: "Vive experiencias inolvidables",
+  //     text3: "en los destinos más relajantes",
+  //   },
+  //   {
+  //     imageSrc: "/header-1.jpg",
+  //     alt: "Otra vista de la playa",
+  //     text1: "Explora el mundo",
+  //     text2: "con nuestro servicio",
+  //     text3: "de viajes exclusivos",
+  //   },
+  // ];
 
   const restartAnimation = () => {
     const animatedTextElements = document.querySelectorAll(".animated-text");
@@ -66,14 +69,14 @@ const Header = forwardRef<HTMLDivElement, HeaderProps>(({ scrollToSection, desti
   return (
     <section id="header" ref={headerRef} className="relative">
       <Slider {...settings} ref={sliderRef}>
-        {slidesData.map((slide, index) => (
+        {destinos.map((dest, index) => (
           <Slide
             key={index}
-            imageSrc={slide.imageSrc}
-            alt={slide.alt}
-            text1={slide.text1}
-            text2={slide.text2}
-            text3={slide.text3}
+            imageSrc={dest.img_url}
+            alt={dest.name_destino}
+            text1={dest.name_destino}
+            text2={dest.text2}
+            text3={dest.text3}
             onExploreNow={handleExploreNow}
           />
         ))}

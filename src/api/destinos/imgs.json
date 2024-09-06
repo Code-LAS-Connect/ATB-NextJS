@@ -1,32 +1,51 @@
+
 [
     {
         "id": 1,
         "name_destino": "Bali",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg",
+        "text1": "Descubre hermosos lugares con ATB",
+        "text2": "Vive experiencias inolvidables",
+        "text3": "en los destinos más relajantes"
     },
     {
         "id": 2,
         "name_destino": "Santorini",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg",
+        "text1": "Descubre hermosos lugares con ATB",
+        "text2": "Vive experiencias inolvidables",
+        "text3": "en los destinos más relajantes"
     },
     {
         "id": 3,
         "name_destino": "Maldivas",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg",
+        "text1": "Descubre hermosos lugares con ATB",
+        "text2": "Vive experiencias inolvidables",
+        "text3": "en los destinos más relajantes"
     },
     {
         "id": 4,
         "name_destino": "Cancún",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg",
+        "text1": "Descubre hermosos lugares con ATB",
+        "text2": "Vive experiencias inolvidables",
+        "text3": "en los destinos más relajantes"
     },
     {
         "id": 5,
         "name_destino": "Tokio",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg",
+        "text1": "Descubre hermosos lugares con ATB",
+        "text2": "Vive experiencias inolvidables",
+        "text3": "en los destinos más relajantes"
     },
     {
         "id": 6,
         "name_destino": "Paris",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg",
+        "text1": "Descubre hermosos lugares con ATB",
+        "text2": "Vive experiencias inolvidables",
+        "text3": "en los destinos más relajantes"
     }
 ]
