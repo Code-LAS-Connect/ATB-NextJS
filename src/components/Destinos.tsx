@@ -26,7 +26,6 @@ export function Destinos({ destinosRef }: any) {
                       width={500}  // Ajusta el ancho según tus necesidades
                       height={300} // Ajusta la altura según tus necesidades
                       className="rounded-md"
-                      layout="responsive" // Esto permite que la imagen se ajuste al contenedor
                     />
                   </CardContent>
                 </Card>
@@ -35,14 +34,14 @@ export function Destinos({ destinosRef }: any) {
                 <DialogHeader>
                   <DialogTitle>{destino.name_destino}</DialogTitle>
                 </DialogHeader>
-                <div className="mt-4">
+                <div className="mt-4 relative w-full h-96">
                   <Image
                     src={destino.img_url}
                     alt={`Vista panorámica de ${destino.name_destino}`}
                     width={800}  // Ajusta el ancho según tus necesidades
                     height={600} // Ajusta la altura según tus necesidades
-                    className="rounded-lg"
-                    layout="responsive" // Esto permite que la imagen se ajuste al contenedor
+                    className="rounded-lg object-cover"
+                    fill // Esto permite que la imagen se ajuste al contenedor
                   />
                   <p className="mt-4 text-sm text-[#4a3c31]">
                     Incluye vuelos, alojamiento de lujo y una gordita...

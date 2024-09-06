@@ -21,13 +21,13 @@ export function Conocenos({ conocenosRef }: ConocenosProps) {
           <div className="md:w-1/2">
             <Image
               src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&h=600&fit=crop"
-              alt="Equipo ATB"
-              className="rounded-lg shadow-lg"
-              width={800} // Ancho de la imagen en píxeles
+              alt="Equipo ATB" // Texto alternativo para la imagen
+              className="rounded-lg shadow-lg object-cover" // Clases de tailwindcss
+              width={800} // ancho de la imagen en píxeles
               height={600} // Alto de la imagen en píxeles
-              layout="intrinsic" // Ajusta el diseño según tus necesidades
             />
           </div>
+          
           <div className="md:w-1/2">
             <p className="text-lg mb-4 text-[#4a3c31]">
               Somos ATB, expertos en crear experiencias de viaje todo incluido.

@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-interface SlideProps {
+interface SlideProps { // Define las propiedades que recibirá el componente
   imageSrc: string;
   alt: string;
   text1: string;
@@ -25,12 +25,12 @@ const Slide: React.FC<SlideProps> = ({
       alt={alt}
       fill
       style={{ objectFit: "cover" }}
-      className="w-full h-full"
+      className="w-full h-full" 
     />
     <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 flex items-center justify-center">
       <div
-        className="text-center text-white max-w-lg mx-auto"
-        style={{ transform: "translateX(-300px)" }}
+        className="text-center text-white max-w-lg mx-auto"// Ajusta el ancho máximo 
+        style={{ transform: "translateX(-300px)" }}// Ajusta la posición inicial del texto
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg animate-fadeInDown">
           {text1}
