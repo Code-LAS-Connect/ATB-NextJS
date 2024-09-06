@@ -1,32 +1,32 @@
 [
     {
         "id": 1,
-        "name_destino": "Bali",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "name_destino": "Villa",
+        "img_url": "https://i.ytimg.com/vi/WWJQE_zLY-A/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAQT9z64a8mVGA2Ut05z6A7PjJgQw"
     },
     {
         "id": 2,
-        "name_destino": "Santorini",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "name_destino": "Villa palma",
+        "img_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Finca.jpg"
     },
     {
         "id": 3,
-        "name_destino": "Maldivas",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "name_destino": "Estadero la finca",
+        "img_url": "https://fincahotelarrayanes.com/wp-content/uploads/2016/01/arrayanes98.jpg"
     },
     {
         "id": 4,
-        "name_destino": "Cancún",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "name_destino": "Los aguacates",
+        "img_url": "https://conceptodefinicion.de/wp-content/uploads/2016/02/Quebrada.jpg"
     },
     {
         "id": 5,
-        "name_destino": "Tokio",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "name_destino": "piscina don santiago",
+        "img_url": "https://media-cdn.tripadvisor.com/media/photo-s/11/87/72/da/piscina-pefecta-para.jpg"
     },
     {
         "id": 6,
-        "name_destino": "Paris",
-        "img_url": "https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg"
+        "name_destino": "Parque Confama",
+        "img_url": "https://images.ctfassets.net/gkhyeghj07ak/1A13gErov6u5MTJEXdcW1v/b9716245e55947315034b155ee26e2d8/Parque_El_Bagre.jpg"
     }
 ]
