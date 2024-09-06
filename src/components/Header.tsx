@@ -5,7 +5,7 @@ export function Header({ scrollToSection, conocenosRef, destinosRef, sobreNosotr
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 flex flex-1 items-center justify-between">
+        <div className="mr-4 flex flex-1 items-center justify-around">
           <a className="flex items-center space-x-2" href="/">
             <TreePalm  className="h-6 w-6 text-blue-600" />
             <span className="font-bold text-blue-600 text-xl">ATB</span>
