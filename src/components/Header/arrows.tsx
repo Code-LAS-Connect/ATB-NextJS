@@ -5,7 +5,7 @@ interface ArrowsProps {
 
 const Arrows = ({ onClickPrev, onClickNext }: ArrowsProps) => {
   return (
-    <div className='absolute  right-14 z-[1000000] flex items-center gap-1'>
+    <div className='absolute bottom-[260px] right-14 z-[1000000] flex items-center gap-1'>
       <button
         onClick={onClickPrev}
         className='bg-[#eee5] fill-white font-mono w-10 h-10 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-lg transition duration-500 hover:bg-white hover:fill-black animate-show-content'
