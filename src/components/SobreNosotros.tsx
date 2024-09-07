@@ -99,7 +99,7 @@ export function SobreNosotros({ sobreNosotrosRef }: { sobreNosotrosRef: React.Re
                       className="rounded-full object-cover w-full h-full"
                     />
                   </div>
-                  <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-amber-100 rounded-full flex items-center justify-center p-4">
+                  <div className="back">
                     <p className="text-amber-800 text-center">{persona["info?"]}</p>
                   </div>
                 </div>
