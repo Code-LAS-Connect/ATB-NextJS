@@ -36,8 +36,8 @@ const SliderItem = ({
           fill // Esto permite que la imagen se ajuste al contenedor
           className='object-cover' 
           priority // Marca la imagen como de alta prioridad
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw' // Ajusta según el tamaño del contenedor
-        />
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw'
+          />
       </div>
       <div className='space-y-4 absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-10'>
         <p

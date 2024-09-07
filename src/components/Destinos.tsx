@@ -17,12 +17,12 @@ export function Destinos({ destinosRef }: any) {
               <DialogTrigger asChild>
                 <Card className="overflow-hidden transition-transform hover:scale-105 cursor-pointer bg-[#f5f2e9]">
                   <CardHeader className="bg-gradient-to-r from-[#6b4226] to-[#8b5d3e]">
-                    <CardTitle className="text-[#f5f2e9]">{destino.name_destino}</CardTitle>
+                    <CardTitle className="text-[#f5f2e9]">{destino.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <Image
-                      src={destino.img_url}
-                      alt={destino.name_destino}
+                      src={destino.image}
+                      alt={destino.name}
                       width={500}  // Ajusta el ancho según tus necesidades
                       height={300} // Ajusta la altura según tus necesidades
                       className="rounded-md"
@@ -32,12 +32,12 @@ export function Destinos({ destinosRef }: any) {
               </DialogTrigger>
               <DialogContent className="bg-[#f0e3d1] text-[#4a3c31]">
                 <DialogHeader>
-                  <DialogTitle>{destino.name_destino}</DialogTitle>
+                  <DialogTitle>{destino.name}</DialogTitle>
                 </DialogHeader>
                 <div className="mt-4 relative w-full h-96">
                   <Image
-                    src={destino.img_url}
-                    alt={`Vista panorámica de ${destino.name_destino}`}
+                    src={destino.image}
+                    alt={`Vista panorámica de ${destino.name}`}
                     width={800}  // Ajusta el ancho según tus necesidades
                     height={600} // Ajusta la altura según tus necesidades
                     className="rounded-lg object-cover"

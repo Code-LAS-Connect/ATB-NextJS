@@ -1,32 +1,44 @@
 [
     {
         "id": 1,
-        "name_destino": "Villa",
-        "img_url": "https://i.ytimg.com/vi/WWJQE_zLY-A/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAQT9z64a8mVGA2Ut05z6A7PjJgQw"
+        "image": "https://i.ytimg.com/vi/WWJQE_zLY-A/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAQT9z64a8mVGA2Ut05z6A7PjJgQw",
+        "brand": "Villa",
+        "name": "Villa",
+        "desc": "Un destino encantador con vistas impresionantes y una atmósfera tranquila, ideal para una escapada relajante."
     },
     {
         "id": 2,
-        "name_destino": "Villa palma",
-        "img_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Finca.jpg"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Finca.jpg",
+        "brand": "Villa Palma",
+        "name": "Villa Palma",
+        "desc": "Una hermosa villa rodeada de naturaleza, con un ambiente acogedor y un gran lugar para descansar."
     },
     {
         "id": 3,
-        "name_destino": "Estadero la finca",
-        "img_url": "https://fincahotelarrayanes.com/wp-content/uploads/2016/01/arrayanes98.jpg"
+        "image": "https://fincahotelarrayanes.com/wp-content/uploads/2016/01/arrayanes98.jpg",
+        "brand": "Estadero",
+        "name": "Estadero La Finca",
+        "desc": "Un estadero pintoresco con amplios espacios verdes y una gran oferta de actividades al aire libre."
     },
     {
         "id": 4,
-        "name_destino": "Los aguacates",
-        "img_url": "https://conceptodefinicion.de/wp-content/uploads/2016/02/Quebrada.jpg"
+        "image": "https://conceptodefinicion.de/wp-content/uploads/2016/02/Quebrada.jpg",
+        "brand": "Los Aguacates",
+        "name": "Los Aguacates",
+        "desc": "Un lugar único con un paisaje impresionante, perfecto para aquellos que buscan aventura y naturaleza."
     },
     {
         "id": 5,
-        "name_destino": "piscina don santiago",
-        "img_url": "https://media-cdn.tripadvisor.com/media/photo-s/11/87/72/da/piscina-pefecta-para.jpg"
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/11/87/72/da/piscina-pefecta-para.jpg",
+        "brand": "Piscina Don Santiago",
+        "name": "Piscina Don Santiago",
+        "desc": "Un lugar relajante con una piscina espectacular, ideal para pasar el día disfrutando del sol."
     },
     {
         "id": 6,
-        "name_destino": "Parque Confama",
-        "img_url": "https://images.ctfassets.net/gkhyeghj07ak/1A13gErov6u5MTJEXdcW1v/b9716245e55947315034b155ee26e2d8/Parque_El_Bagre.jpg"
+        "image": "https://images.ctfassets.net/gkhyeghj07ak/1A13gErov6u5MTJEXdcW1v/b9716245e55947315034b155ee26e2d8/Parque_El_Bagre.jpg",
+        "brand": "Parque Confama",
+        "name": "Parque Confama",
+        "desc": "Un parque amplio y verde con muchas actividades recreativas, perfecto para un día en familia."
     }
 ]
