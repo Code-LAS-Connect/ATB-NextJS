@@ -1,86 +1,126 @@
-// components/Header/Header.tsx
-import React, { forwardRef, useRef } from 'react';
-import Slider from 'react-slick';
-import Slide from './Slide'; // Ajusta la ruta según tu estructura de carpetas
-import ArrowButton from './ArrowButton'; // Ajusta la ruta según tu estructura de carpetas
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// Header.tsx
+"use client";
+
+import { useState } from 'react';
+import SliderItem from './slider-item';
+import SliderThumbnailItem from './slider-thumbnail-item';
+import Arrows from './arrows';
 
 interface HeaderProps {
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
   destinosRef: React.RefObject<HTMLDivElement>;
-  headerRef?: React.RefObject<HTMLDivElement>; // Propiedad opcional para la referencia
+  headerRef: React.RefObject<HTMLDivElement>;
 }
 
-const Header = forwardRef<HTMLDivElement, HeaderProps>(({ scrollToSection, destinosRef, headerRef }, ref) => {
-  const sliderRef = useRef<Slider>(null);
+const Header: React.FC<HeaderProps> = ({ scrollToSection, destinosRef, headerRef }) => {
+  const [itemActive, setItemActive] = useState<number>(1);
+  const countItems = 5;
 
-  const slidesData = [
-    {
-      imageSrc: "/header-1.jpg",
-      alt: "Playa paradisíaca",
-      text1: "Descubre hermosos lugares con ATB",
-      text2: "Vive experiencias inolvidables",
-      text3: "en los destinos más relajantes",
-    },
-    {
-      imageSrc: "/header-1.jpg",
-      alt: "Otra vista de la playa",
-      text1: "Explora el mundo",
-      text2: "con nuestro servicio",
-      text3: "de viajes exclusivos",
-    },
-  ];
-
-  const restartAnimation = () => {
-    const animatedTextElements = document.querySelectorAll(".animated-text");
-    animatedTextElements.forEach((element) => {
-      const htmlElement = element as HTMLElement;
-      htmlElement.style.animation = "none";
-      htmlElement.offsetHeight; /* trigger reflow */
-      htmlElement.style.animation = "";
-    });
+  const onNext = () => {
+    setItemActive((prev) => (prev >= countItems ? 1 : prev + 1));
   };
 
-  const handleAfterChange = () => {
-    restartAnimation();
+  const onPrevious = () => {
+    setItemActive((prev) => (prev === 1 ? countItems : prev - 1));
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    nextArrow: <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />,
-    prevArrow: <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />,
-    afterChange: handleAfterChange,
-  };
-
-  const handleExploreNow = () => {
+  const scrollToDestinos = () => {
     scrollToSection(destinosRef);
   };
 
   return (
-    <section id="header" ref={headerRef} className="relative">
-      <Slider {...settings} ref={sliderRef}>
-        {slidesData.map((slide, index) => (
-          <Slide
-            key={index}
-            imageSrc={slide.imageSrc}
-            alt={slide.alt}
-            text1={slide.text1}
-            text2={slide.text2}
-            text3={slide.text3}
-            onExploreNow={handleExploreNow}
+    <header ref={headerRef} className='relative h-screen bg-cover bg-center'>
+      <div className='absolute inset-0 flex flex-col justify-center items-center'>
+        <ul className='relative h-full'>
+          <SliderItem
+            itemActive={itemActive}
+            id={1}
+            image='/header-1.jpg'
+            brand='Dodge'
+            name='Challenger'
+            desc='El Dodge Challenger es un potente muscle car con diseño clásico y altas prestaciones, destacando por su fuerza y estilo impactante.'
+            scrollToDestinos={scrollToDestinos}
           />
-        ))}
-      </Slider>
-    </section>
+          <SliderItem
+            itemActive={itemActive}
+            id={2}
+            image='/header-1.jpg'
+            brand='Dodge'
+            name='Camaro'
+            desc='El Dodge Camaro es un icónico muscle car con líneas agresivas, rendimiento poderoso y una estética moderna que cautiva a los amantes de la velocidad.'
+            scrollToDestinos={scrollToDestinos}
+          />
+          <SliderItem
+            itemActive={itemActive}
+            id={3}
+            image='/header-1.jpg'
+            brand='Dodge'
+            name='Charger'
+            desc='El Dodge Charger es una sedán deportivo con diseño imponente, potente rendimiento y características de alto nivel, fusionando estilo y velocidad.'
+            scrollToDestinos={scrollToDestinos}
+          />
+          <SliderItem
+            itemActive={itemActive}
+            id={4}
+            image='/header-1.jpg'
+            brand='Jeep'
+            name='Jeep'
+            desc='Jeep, sinónimo de aventura todoterreno. Modelos como el Wrangler y Grand Cherokee ofrecen robustez y estilo icónico en cada viaje.'
+            scrollToDestinos={scrollToDestinos}
+          />
+          <SliderItem
+            itemActive={itemActive}
+            id={5}
+            image='/header-1.jpg'
+            brand='Dodge'
+            name='Ram'
+            desc='La Dodge Ram es una robusta camioneta con poderoso rendimiento y lujoso interior. Con un diseño imponente, es líder en fuerza y comodidad.'
+            scrollToDestinos={scrollToDestinos}
+          />
+        </ul>
+        <Arrows onClickPrev={onPrevious} onClickNext={onNext} />
+      </div>
+
+      {/* Thumbnails */}
+      <ul className='absolute bottom-0 z-10 flex sm:justify-end gap-3 w-full h-[250px] px-14 overflow-y-hidden overflow-x-auto'>
+        <SliderThumbnailItem
+          itemActive={itemActive}
+          image='/header-1.jpg'
+          id={1}
+          name='Challenger'
+          onClick={() => setItemActive(1)}
+        />
+        <SliderThumbnailItem
+          itemActive={itemActive}
+          image='/header-1.jpg'
+          id={2}
+          name='Camaro'
+          onClick={() => setItemActive(2)}
+        />
+        <SliderThumbnailItem
+          itemActive={itemActive}
+          image='/header-1.jpg'
+          id={3}
+          name='Charger'
+          onClick={() => setItemActive(3)}
+        />
+        <SliderThumbnailItem
+          itemActive={itemActive}
+          image='/header-1.jpg'
+          id={4}
+          name='Jeep'
+          onClick={() => setItemActive(4)}
+        />
+        <SliderThumbnailItem
+          itemActive={itemActive}
+          image='/header-1.jpg'
+          id={5}
+          name='Ram'
+          onClick={() => setItemActive(5)}
+        />
+      </ul>
+    </header>
   );
-});
-Header.displayName = 'Header';
+};
 
 export default Header;

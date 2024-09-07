@@ -32,13 +32,13 @@ export default function Page() {
         destinosRef={destinosRef}
         sobreNosotrosRef={sobreNosotrosRef}
         contactoRef={contactoRef}
-        headerRef={headerRef} // 
+        headerRef={headerRef} // Pasar la referencia aquí
       />
       <div style={{ marginTop: "-95px" }}>
         <Header
           scrollToSection={scrollToSection}
           destinosRef={destinosRef}
-          headerRef={headerRef} // Pasar la referencia aquí
+          headerRef={headerRef} 
         />
         <Conocenos conocenosRef={conocenosRef} />
         <Destinos destinosRef={destinosRef} />
@@ -46,7 +46,8 @@ export default function Page() {
         <Contacto contactoRef={contactoRef} />
         <Footer />
         <WhatsappButton
-          onClick={() => {// Abre WhatsApp en una nueva pestaña
+          onClick={() => {
+            // Abre WhatsApp en una nueva pestaña
             window.open("https://wa.me/1234567890", "_blank");
           }}
         />
