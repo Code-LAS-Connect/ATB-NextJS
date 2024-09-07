@@ -28,7 +28,7 @@ export default function SliderItem({
           itemActive === id ? "opacity-100 z-10" : "opacity-0"
         )}
       >
-        <div className="relative h-[100vh] w-[100vw]">
+        <div className="relative h-[110vh] w-[100vw]">
           <Image
             src={image}
             alt={name}

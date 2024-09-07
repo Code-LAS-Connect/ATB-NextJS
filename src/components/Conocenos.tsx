@@ -11,7 +11,7 @@ export function Conocenos({ conocenosRef }: ConocenosProps) {
     <section
       id="conocenos"
       ref={conocenosRef}
-      className="ct py-16 bg-gradient-to-r from-yellow-100 to-pink-100 animate-fadeIn"
+      className="ct py-28 bg-gradient-to-r from-yellow-100 to-pink-100 animate-fadeIn"
     >
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12 text-[#6b4226]">
