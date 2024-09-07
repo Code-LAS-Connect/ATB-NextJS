@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import { cn } from '../../lib/utils';
 
 interface SliderThumbnailItemProps {
@@ -25,7 +24,8 @@ const SliderThumbnailItem = ({
         'h-[250px] shrink-0 transition-all duration-300 overflow-hidden relative after:absolute after:w-full after:h-full after:left-0 after:bottom-0 after:bg-thumbnails hover:brightness-150',
         itemActive === id
           ? 'brightness-150 w-[200px]'
-          : 'brightness-50 w-[50px]'
+          : 'brightness-50 w-[50px]',
+        'hidden md:block' // Oculta el elemento en pantallas menores a 'md'
       )}
     >
       <div className='relative w-full h-full rounded-lg'>
