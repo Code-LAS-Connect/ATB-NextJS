@@ -22,14 +22,15 @@ const SliderItem = ({
 }: SliderItemProps) => {
   console.log('SliderItemProps', itemActive, id, image, brand, name, desc, scrollToDestinos);
   return (
-    <li
+    <div className='li_cont'>
+      <li
       className={cn(
-        'absolute inset-0 overflow-hidden after:absolute after:w-full after:h-full after:left-0 after:bottom-0 after:bg-slider transition-all duration-500',
+        'absolute inset-0 after:absolute after:w-full after:h-full after:left-0 after:bottom-0 after:bg-slider transition-all duration-500',
         itemActive === id ? 'opacity-100 z-10' : 'opacity-0'
       )}
 
     >
-      <div className='relative w-full h-full img_h'>
+      <div className='relative h-[100vh] w-[100vw]'>
         <Image 
           src={image} 
           alt={name} 
@@ -72,6 +73,7 @@ const SliderItem = ({
         Explorar Destinos
       </button>
     </li>
+    </div>
   );
 };
 
