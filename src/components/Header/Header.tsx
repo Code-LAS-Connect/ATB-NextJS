@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header ref={headerRef} className='relative h-screen bg-cover bg-center'>
-      <div className='absolute inset-0 flex flex-col justify-center items-center'>
+      <div className='absolute inset-0 flex flex-col justify-center'>
         <ul className='relative h-full'>
           {sliderItems.map((item) => (
             <SliderItem
