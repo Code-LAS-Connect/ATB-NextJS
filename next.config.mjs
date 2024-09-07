@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ['static.vecteezy.com', 'img.freepik.com', 'images.unsplash.com', 'your-image-domain.com'],
+      // Aca se agregan los Dominios de las imagenes 
+        },
+  };
+  
+  export default nextConfig;
+  

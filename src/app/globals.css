@@ -7,6 +7,10 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+::-webkit-scrollbar{
+  width: 0;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -103,4 +107,7 @@ header{
 .ft{
   display: flex;
   justify-content: space-evenly;
+}
+.img_h{
+  min-width: 100%;
 }
