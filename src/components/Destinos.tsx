@@ -3,6 +3,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import destinosBD from '../api/destinos/imgs.json';
 import Image from 'next/image';
+import Carousel from "@/components/ui/carrousel";
+import Costos from '@/components/ui/costos';
 
 export function Destinos({ destinosRef }: any) {
   const destinos = destinosBD;
@@ -30,23 +32,33 @@ export function Destinos({ destinosRef }: any) {
                   </CardContent>
                 </Card>
               </DialogTrigger>
-              <DialogContent className="bg-[#f0e3d1] text-[#4a3c31]">
+              <DialogContent className="bg-[#f0e3d1] text-[#4a3c31] overflow-y-auto "
+              style={{width: '90vw', height: '90vh'}}>
                 <DialogHeader>
                   <DialogTitle>{destino.name}</DialogTitle>
                 </DialogHeader>
-                <div className="mt-4 relative w-full h-96">
-                  <Image
-                    src={destino.image}
-                    alt={`Vista panorámica de ${destino.name}`}
-                    width={800}  // Ajusta el ancho según tus necesidades
-                    height={600} // Ajusta la altura según tus necesidades
-                    className="rounded-lg object-cover"
-                    fill // Esto permite que la imagen se ajuste al contenedor
+                <div className="relative">
+                  <Carousel
+                    images={[
+                      {
+                        img: destino.image,
+                        title: destino.name,
+                        description: `Vista panorámica de ${destino.name}`,
+                      },
+                      {
+                        img: destino.image, // se puede añadir mas imagenes anexandolas al JSOn
+                        title: destino.name,
+                        description: `Vista panorámica de ${destino.name}`,
+                      },
+                      {
+                        img: destino.image, // se puede añadir mas imagenes anexandolas al JSOn
+                        title: destino.name,
+                        description: `Vista panorámica de ${destino.name}`,
+                      }
+                    ]}
                   />
-                  <p className="mt-4 text-sm text-[#4a3c31]">
-                    Incluye vuelos, alojamiento de lujo y una gordita...
-                  </p>
                 </div>
+                <Costos />
               </DialogContent>
             </Dialog>
           ))}

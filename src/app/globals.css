@@ -125,3 +125,13 @@ header{
     transform: rotateY(180deg);
   }
 }
+
+.img_dlg{
+  width: 80%;
+  height: 70%;
+  margin: 0 auto;
+}
+
+.ttt{
+  margin-top: 4rem;
+}
