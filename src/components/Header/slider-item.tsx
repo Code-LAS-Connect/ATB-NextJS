@@ -1,80 +1,80 @@
-import Image from 'next/image';
-import { cn } from '../../lib/utils';
+import Image from "next/image"
+import { cn } from "../../lib/utils"
 
 interface SliderItemProps {
-  itemActive: number;
-  id: number;
-  image: string;
-  brand: string;
-  name: string;
-  desc: string;
-  scrollToDestinos: () => void;  
+  itemActive: number
+  id: number
+  image: string
+  brand: string
+  name: string
+  desc: string
+  scrollToDestinos: () => void
 }
 
-const SliderItem = ({
+export default function SliderItem({
   itemActive,
   id,
   image,
   brand,
   name,
   desc,
-  scrollToDestinos
-}: SliderItemProps) => {
-  console.log('SliderItemProps', itemActive, id, image, brand, name, desc, scrollToDestinos);
+  scrollToDestinos,
+}: SliderItemProps) {
   return (
-    <div className='li_cont'>
+    <div className="li_cont">
       <li
-      className={cn(
-        'absolute inset-0 after:absolute after:w-full after:h-full after:left-0 after:bottom-0 after:bg-slider transition-all duration-500',
-        itemActive === id ? 'opacity-100 z-10' : 'opacity-0'
-      )}
-
+        className={cn(
+          "absolute inset-0 transition-all duration-700 ease-out",
+          itemActive === id ? "opacity-100 z-10" : "opacity-0"
+        )}
       >
-      <div className='relative h-[100vh] w-[100vw] bg-gradient-to-r from-black/70 to-black/40'>
-        <Image 
-          src={image} 
-          alt={name} 
-          fill // Esto permite que la imagen se ajuste al contenedor
-          className='object-cover ' 
-          priority // Marca la imagen como de alta prioridad
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw'
+        <div className="relative h-[100vh] w-[100vw]">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
           />
-      </div>
-      <div className='space-y-4 absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-10'>
-        <p
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+        </div>
+        <div className="space-y-4 absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-10">
+          <p
+            className={cn(
+              "uppercase tracking-[10px] text-white opacity-0 translate-y-10 transition-all duration-700 ease-out",
+              itemActive === id && "opacity-100 translate-y-0"
+            )}
+          >
+            {brand}
+          </p>
+          <h2
+            className={cn(
+              "text-6xl lg:text-8xl m-0 text-white font-bold opacity-0 translate-y-10 transition-all duration-700 ease-out delay-100",
+              itemActive === id && "opacity-100 translate-y-0"
+            )}
+          >
+            {name}
+          </h2>
+          <p
+            className={cn(
+              "text-gray-200 opacity-0 translate-y-10 transition-all duration-700 ease-out delay-200",
+              itemActive === id && "opacity-100 translate-y-0"
+            )}
+          >
+            {desc}
+          </p>
+        </div>
+        <button
+          onClick={scrollToDestinos}
           className={cn(
-            'uppercase tracking-[10px] text-white translate-y-[30px]  animation-delay-300',
-            itemActive === id && 'animate-show-content'
+            "absolute bottom-28 left-[10%] px-6 py-3 bg-yellow-500 text-white rounded-lg text-xl font-bold opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300",
+            itemActive === id && "opacity-100 translate-y-0"
           )}
         >
-          {brand}
-        </p>
-        <h2
-          className={cn(
-            'text-6xl lg:text-8xl m-0 text-white font-bold translate-y-[30px]  animation-delay-400',
-            itemActive === id && 'animate-show-content'
-          )}
-        >
-          {name}
-        </h2>
-        <p
-          className={cn(
-            'text-gray-200 translate-y-[30px]  animation-delay-500',
-            itemActive === id && 'animate-show-content'
-          )}
-        >
-          {desc}
-        </p>
-      </div>
-      <button
-        onClick={scrollToDestinos}
-        className={`absolute bottom-4 right- px-4 py-2 bg-yellow-500 text-white rounded-lg`}
-      >
-        Explorar Destinos
-      </button>
-    </li>
+          Explorar Destinos
+        </button>
+      </li>
     </div>
-  );
-};
-
-export default SliderItem;
+  )
+}
