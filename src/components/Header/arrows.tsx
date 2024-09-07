@@ -5,10 +5,10 @@ interface ArrowsProps {
 
 const Arrows = ({ onClickPrev, onClickNext }: ArrowsProps) => {
   return (
-    <div className='absolute bottom-[260px] right-14 z-[100] flex items-center gap-1'>
+    <div className='absolute bottom-[260px] right-14 z-[1000000] flex items-center gap-1'>
       <button
         onClick={onClickPrev}
-        className='bg-[#eee5] fill-white font-mono w-10 h-10 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-lg transition duration-500 hover:bg-white hover:fill-black translate-y-[30px] blur-[20px] opacity-0 animate-show-content'
+        className='bg-[#eee5] fill-white font-mono w-10 h-10 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-lg transition duration-500 hover:bg-white hover:fill-black translate-y-[50px]  animate-show-content'
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -22,7 +22,7 @@ const Arrows = ({ onClickPrev, onClickNext }: ArrowsProps) => {
       </button>
       <button
         onClick={onClickNext}
-        className='bg-[#eee5] fill-white font-mono w-10 h-10 flex items-center justify-center rounded-tr-lg rounded-br-lg text-lg transition duration-500 hover:bg-white hover:fill-black -translate-y-[30px] blur-[20px] opacity-0 animate-show-content'
+        className='bg-[#eee5] fill-white font-mono w-10 h-10 flex items-center justify-center rounded-tr-lg rounded-br-lg text-lg transition duration-500 hover:bg-white hover:fill-black -translate-y-[-50px]   animate-show-content'
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'

@@ -29,13 +29,13 @@ const SliderItem = ({
         itemActive === id ? 'opacity-100 z-10' : 'opacity-0'
       )}
 
-    >
-      <div className='relative h-[100vh] w-[100vw]'>
+      >
+      <div className='relative h-[100vh] w-[100vw] bg-gradient-to-r from-black/70 to-black/40'>
         <Image 
           src={image} 
           alt={name} 
           fill // Esto permite que la imagen se ajuste al contenedor
-          className='object-cover' 
+          className='object-cover ' 
           priority // Marca la imagen como de alta prioridad
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw'
           />
@@ -43,7 +43,7 @@ const SliderItem = ({
       <div className='space-y-4 absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-10'>
         <p
           className={cn(
-            'uppercase tracking-[10px] text-white translate-y-[30px] blur-[20px] opacity-0 animation-delay-300',
+            'uppercase tracking-[10px] text-white translate-y-[30px]  animation-delay-300',
             itemActive === id && 'animate-show-content'
           )}
         >
@@ -51,7 +51,7 @@ const SliderItem = ({
         </p>
         <h2
           className={cn(
-            'text-6xl lg:text-8xl m-0 text-white font-bold translate-y-[30px] blur-[20px] opacity-10 animation-delay-400',
+            'text-6xl lg:text-8xl m-0 text-white font-bold translate-y-[30px]  animation-delay-400',
             itemActive === id && 'animate-show-content'
           )}
         >
@@ -59,7 +59,7 @@ const SliderItem = ({
         </h2>
         <p
           className={cn(
-            'text-gray-200 translate-y-[30px] blur-[20px] opacity-0 animation-delay-500',
+            'text-gray-200 translate-y-[30px]  animation-delay-500',
             itemActive === id && 'animate-show-content'
           )}
         >
@@ -68,7 +68,7 @@ const SliderItem = ({
       </div>
       <button
         onClick={scrollToDestinos}
-        className='absolute bottom-4 right-4 px-4 py-2 bg-blue-500 text-white rounded-lg'
+        className={`absolute bottom-4 right- px-4 py-2 bg-yellow-500 text-white rounded-lg`}
       >
         Explorar Destinos
       </button>
