@@ -5,23 +5,36 @@ import { useState, useEffect } from 'react';
 import SliderItem from './slider-item';
 import SliderThumbnailItem from './slider-thumbnail-item';
 import Arrows from './arrows';
-import data from '../../api/destinos/imgs.json'; // Asegúrate de que la ruta sea correcta
+import data from '../../api/destinos/imgs.json'; // Importa los datos desde el archivo JSON
 
 interface HeaderProps {
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
-  destinosRef: React.RefObject<HTMLDivElement>;
   headerRef: React.RefObject<HTMLDivElement>;
+  conocenosRef: React.RefObject<HTMLDivElement>;
+  destinosRef: React.RefObject<HTMLDivElement>;
+  sobreNosotrosRef: React.RefObject<HTMLDivElement>;
+  contactoRef: React.RefObject<HTMLDivElement>;
 }
 
-const Header: React.FC<HeaderProps> = ({ scrollToSection, destinosRef, headerRef }) => {
+type DestinationMap = {
+  [key: number]: React.RefObject<HTMLDivElement>;
+};
+
+const Header: React.FC<HeaderProps> = ({
+  scrollToSection,
+  headerRef,
+  conocenosRef,
+  destinosRef,
+  sobreNosotrosRef,
+  contactoRef
+}) => {
   const [itemActive, setItemActive] = useState<number>(1);
   const [sliderItems, setSliderItems] = useState<any[]>([]);
+  const countItems = sliderItems.length;
 
   useEffect(() => {
     setSliderItems(data); // Asigna los datos desde el archivo JSON
   }, []);
-
-  const countItems = sliderItems.length;
 
   const onNext = () => {
     setItemActive((prev) => (prev >= countItems ? 1 : prev + 1));
@@ -31,8 +44,21 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, destinosRef, headerRef
     setItemActive((prev) => (prev === 1 ? countItems : prev - 1));
   };
 
-  const scrollToDestinos = () => {
-    scrollToSection(destinosRef);
+  const destinationMap: DestinationMap = {
+    1: conocenosRef,
+    2: destinosRef,
+    3: sobreNosotrosRef, //falta inpoortar correctamene los dialogog que se queiren pero ya se abriria por id el boton
+    4: contactoRef,
+    5: headerRef,  
+    6: headerRef, 
+  };
+
+  const handleItemClick = (id: number) => {
+    setItemActive(id);
+    const ref = destinationMap[id];
+    if (ref && ref.current) {
+      scrollToSection(ref);
+    }
   };
 
   return (
@@ -48,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection, destinosRef, headerRef
               brand={item.brand}
               name={item.name}
               desc={item.desc}
-              scrollToDestinos={scrollToDestinos}
+              scrollToDestinos={() => handleItemClick(item.id)}
             />
           ))}
         </ul>

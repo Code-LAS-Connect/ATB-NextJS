@@ -27,18 +27,22 @@ export default function Page() {
   return (
     <div>
       <Navbar
-        scrollToSection={scrollToSection}
-        conocenosRef={conocenosRef}
+        scrollToSection={scrollToSection}// aca deberian pasarse los dialog que se quieren abrir
+        conocenosRef={conocenosRef}     // en vez de la secciones de la pagina 
         destinosRef={destinosRef}
         sobreNosotrosRef={sobreNosotrosRef}
         contactoRef={contactoRef}
-        headerRef={headerRef} // Pasar la referencia aquí
+        headerRef={headerRef} 
       />
       <div style={{ marginTop: "-95px" }}>
         <Header
           scrollToSection={scrollToSection}
           destinosRef={destinosRef}
-          headerRef={headerRef} 
+          headerRef={headerRef}
+          conocenosRef={conocenosRef}
+          sobreNosotrosRef={sobreNosotrosRef}
+          contactoRef={contactoRef}
+
         />
         <Conocenos conocenosRef={conocenosRef} />
         <Destinos destinosRef={destinosRef} />
