@@ -1,3 +1,4 @@
+// destinos.tsx
 'use client'
 
 import React from 'react'
@@ -38,50 +39,47 @@ export function Destinos({ destinosRef }: { destinosRef: React.RefObject<HTMLEle
     <motion.section
       id="destinos"
       ref={destinosRef}
-      className="ct py-16 bg-gradient-to-r from-yellow-100 to-pink-100"
+      className="py-12 md:py-16 bg-gradient-to-r from-yellow-100 to-pink-100"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
     >
-      <div className="container">
+      <div className="container mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold text-center mb-12 text-[#6b4226]"
+          className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-[#6b4226]"
           variants={itemVariants}
         >
           Nuestros Destinos
         </motion.h2>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
         >
           {destinos.map((destino) => (
             <motion.div key={destino.id} variants={itemVariants}>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Card className="overflow-hidden transition-transform hover:scale-105 cursor-pointer bg-[#f5f2e9]">
-                    <CardHeader className="bg-gradient-to-r from-[#6b4226] to-[#8b5d3e]">
-                      <CardTitle className="text-[#f5f2e9]">{destino.name}</CardTitle>
+                  <Card className="overflow-hidden transition-transform transform hover:scale-105 cursor-pointer bg-[#f5f2e9] rounded-lg shadow-md">
+                    <CardHeader className="bg-gradient-to-r from-[#6b4226] to-[#8b5d3e] p-3 sm:p-4">
+                      <CardTitle className="text-[#f5f2e9] text-lg sm:text-xl font-semibold">{destino.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <Image
                         src={destino.image}
                         alt={destino.name}
-                        width={500}
-                        height={300}
-                        className="rounded-md"
+                        width={400}
+                        height={250}
+                        className="rounded-lg object-cover"
                       />
                     </CardContent>
                   </Card>
                 </DialogTrigger>
                 <DialogContent
-                  className="bg-[#f0e3d1] text-[#4a3c31] overflow-y-auto"
-                  style={{ width: '90vw', height: '90vh' }}
+                  className="bg-[#f0e3d1] text-[#4a3c31] rounded-lg p-4 sm:p-6 flex flex-col lg:flex-row"
+                  style={{ maxWidth: '90vw', maxHeight: '80vh' }}
                 >
-                  <DialogHeader>
-                    <DialogTitle>{destino.name}</DialogTitle>
-                  </DialogHeader>
-                  <div className="relative">
+                  <div className="w-full lg:w-1/2 flex-shrink-0 mb-4 lg:mb-0">
                     <Carousel
                       images={[
                         {
@@ -102,7 +100,9 @@ export function Destinos({ destinosRef }: { destinosRef: React.RefObject<HTMLEle
                       ]}
                     />
                   </div>
-                  <Costos />
+                  <div className="w-full lg:w-1/2 lg:pl-4">
+                    <Costos />
+                  </div>
                 </DialogContent>
               </Dialog>
             </motion.div>

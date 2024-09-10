@@ -23,7 +23,7 @@ export const TabContent: React.FC<TabContentProps> = ({ activeTab }) => {
   };
 
   return (
-    <div>
+    <div className=" bg-gradient-to-r from-yellow-100 to-pink-100 pb-15	">
       {/* Button for mobile devices */}
       <div className="sm:hidden">
         <select
@@ -40,7 +40,7 @@ export const TabContent: React.FC<TabContentProps> = ({ activeTab }) => {
       </div>
 
       {/* Tabs for desktop */}
-      <ul className="hidden text-sm font-medium text-center text-gray-900 divide-x divide-gray-300 rounded-lg sm:flex">
+      <ul className="hidden bg-white text-sm font-medium text-center text-gray-900 divide-x divide-gray-300 rounded-lg sm:flex">
         {tabData.map((tab) => (
           <li key={tab.id} className="w-full">
             <button

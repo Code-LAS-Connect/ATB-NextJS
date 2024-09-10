@@ -10,6 +10,8 @@ import { Contacto } from "../components/Contacto";
 import { Footer } from "../components/Footer";
 import WhatsappButton from "../components/WhatsappButton";
 import { TabContent } from '../components/info/TabContent'; // Ruta asegurada
+import {DragCards} from "../components/DrawCarts"; // Ruta asegurada}
+
 
 export default function Page() {
   const conocenosRef = useRef<HTMLDivElement>(null);
@@ -48,6 +50,7 @@ export default function Page() {
         />
         <Conocenos conocenosRef={conocenosRef} />
         <TabContent activeTab={activeTab} />
+        <DragCards />
         <Destinos destinosRef={destinosRef} />
         <SobreNosotros sobreNosotrosRef={sobreNosotrosRef} />
         <Contacto contactoRef={contactoRef} />
