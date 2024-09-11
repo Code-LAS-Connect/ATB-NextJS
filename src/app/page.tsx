@@ -10,8 +10,6 @@ import { Contacto } from "../components/Contacto";
 import { Footer } from "../components/Footer";
 import WhatsappButton from "../components/WhatsappButton";
 import { TabContent } from '../components/info/TabContent'; // Ruta asegurada
-import {DragCards} from "../components/DrawCarts"; // Ruta asegurada}
-
 
 export default function Page() {
   const conocenosRef = useRef<HTMLDivElement>(null);
@@ -26,8 +24,7 @@ export default function Page() {
     }
   };
 
-  // Puedes definir cuál es el tab activo, aquí como ejemplo "stats"
-  const activeTab = "stats"; // Cambia esto según sea necesario
+  const activeTab = "stats"; 
 
   return (
     <div>
@@ -50,14 +47,12 @@ export default function Page() {
         />
         <Conocenos conocenosRef={conocenosRef} />
         <TabContent activeTab={activeTab} />
-        <DragCards />
         <Destinos destinosRef={destinosRef} />
         <SobreNosotros sobreNosotrosRef={sobreNosotrosRef} />
         <Contacto contactoRef={contactoRef} />
         <Footer />
         <WhatsappButton
           onClick={() => {
-            // Abre WhatsApp en una nueva pestaña
             window.open("https://wa.me/1234567890", "_blank");
           }}
         />
