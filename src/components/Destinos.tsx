@@ -6,7 +6,6 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import { X, MapPin, Clock, Users, Check } from "lucide-react";
 
-// Asumiendo que has ajustado la estructura de tu JSON para incluir toda la información necesaria
 import destinosBD from "../api/destinos/imgs.json";
 
 interface Destino {
@@ -20,56 +19,66 @@ interface Destino {
   ubicacion: string;
   precio: number;
 }
+
 interface DestinosProps {
-  destinosRef?: RefObject<HTMLDivElement>; // Hacer que destinosRef sea opcional
+  destinosRef?: RefObject<HTMLDivElement>;
 }
 
 export const Destinos: React.FC<DestinosProps> = ({ destinosRef }) => {
-  return (
-    <section
-      ref={destinosRef}
-      className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-[#f3f4f6]"
-    >
-      <h2 className="relative z-20 text-[20vw] font-black text-[#1f2937] md:text-[200px]">
-        DESTINOS<span className="text-indigo-500">.</span>
-      </h2>
-      <Cards destinos={destinosBD} />
-    </section>
-  );
-};
-
-const Cards = ({ destinos }: { destinos: Destino[] }) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const [selectedDestino, setSelectedDestino] = useState<Destino | null>(null);
 
   return (
-    <>
-      <div 
-        className="absolute inset-0 z-10 py-16 bg-gradient-to-r from-yellow-100 to-pink-100 animate-fadeIn"
-        ref={containerRef}
-      >
-        {destinos.map((destino) => (
-          <Card
-            key={destino.id}
-            containerRef={containerRef}
-            destino={destino}
-            rotate={`${Math.floor(Math.random() * 20) - 10}deg`}
-            top={`${Math.floor(Math.random() * 80)}%`}
-            left={`${Math.floor(Math.random() * 80)}%`}
-            className="w-36 md:w-56 "
-            onClick={() => setSelectedDestino(destino)}
-          />
-        ))}
+    <section
+      ref={destinosRef}
+      className="relative min-h-screen w-full overflow-hidden bg-[#f3f4f6] flex flex-col justify-center items-center"
+    >
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-yellow-100 to-pink-100 animate-fadeIn" />
+      
+      <div className="relative z-20 w-full h-full flex flex-col justify-center items-center">
+        <div className="relative z-30 w-full h-[60vh]">
+          <Cards destinos={destinosBD} onSelectDestino={setSelectedDestino} />
+        </div>
+        
+        <h2 className="text-[20vw] font-black text-[#1f2937] md:text-[200px] text-center mt-8 mb-5">
+          DESTINOS<span className="text-indigo-500">.</span>
+        </h2>
       </div>
+
       <EnhancedTourPackageDialog
         isOpen={!!selectedDestino}
         onClose={() => setSelectedDestino(null)}
         paquete={selectedDestino!}
-        allPaquetes={destinos}
+        allPaquetes={destinosBD}
       />
-    </>
+    </section>
   );
 };
+
+const Cards = ({ destinos, onSelectDestino }: { destinos: Destino[], onSelectDestino: (destino: Destino) => void }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  return (
+    <div 
+      className="relative w-full h-full"
+      ref={containerRef}
+    >
+      {destinos.map((destino) => (
+        <Card
+          key={destino.id}
+          containerRef={containerRef}
+          destino={destino}
+          rotate={`${Math.floor(Math.random() * 20) - 10}deg`}
+          top={`${Math.floor(Math.random() * 60)}%`}
+          left={`${Math.floor(Math.random() * 80)}%`}
+          className="w-36 md:w-56 "
+          onClick={() => onSelectDestino(destino)}
+        />
+      ))}
+    </div>
+  );
+};
+
+// ... (El resto del código permanece igual)
 
 
 const Card = ({
