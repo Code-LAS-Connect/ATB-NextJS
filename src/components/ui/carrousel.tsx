@@ -2,6 +2,7 @@
 "use client"; // Indica que es un componente del lado del cliente
 
 import { useState } from "react";
+import Image from "next/image"; // Importamos el componente Image de Next.js
 
 interface Destination {
   img: string;
@@ -33,7 +34,13 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         >
           {images.map((image, index) => (
             <div key={index} className="min-w-full relative">
-              <img src={image.img} alt={image.title} className="img_dlg"/>
+              <Image 
+                src={image.img} 
+                alt={image.title} 
+                width={1200}  // Reemplaza con el ancho adecuado
+                height={800}  // Reemplaza con la altura adecuada
+                className="img_dlg" 
+              />
               <div className="ttt">
                 <h3 className="text-6xl">{image.title}</h3>
                 <p className="mt-4 text-3xl">{image.description}</p>
