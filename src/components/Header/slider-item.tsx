@@ -65,7 +65,7 @@ export default function SliderItem({
             {desc}
           </p>
         </div>
-        <button
+        {/*<button
           onClick={scrollToDestinos}
           className={cn(
             "absolute bottom-28 left-[10%] px-6 py-3 bg-yellow-500 text-white rounded-lg text-xl font-bold opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300",
@@ -73,7 +73,7 @@ export default function SliderItem({
           )}
         >
           Explorar Destinos
-        </button>
+        </button>*/}
       </li>
     </div>
   )
