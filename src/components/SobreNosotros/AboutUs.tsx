@@ -51,16 +51,18 @@ export function AboutUs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/sobreNosotros/SobreNosotros.json")
-        const data = await response.json() as { texts: Texto[] } // Establecemos el tipo del JSON
-        setTexts(data.texts)
+        const response = await fetch("/sobreNosotros/SobreNosotros.json");
+        const text = await response.text(); // Leer como texto para depuración
+        console.log(text); // Imprimir el texto recibido
+        const data = JSON.parse(text) as { texts: Texto[] }; // Parsear manualmente
+        setTexts(data.texts);
       } catch (error) {
-        console.error("Error fetching JSON data:", error)
+        console.error("Error fetching JSON data:", error);
       }
-    }
-
-    fetchData()
-  }, [])
+    };
+  
+    fetchData();
+  }, []);
 
   useEffect(() => {
     if (inView) {
@@ -112,9 +114,9 @@ export function AboutUs() {
                 })}
               </motion.div>
               <p className="text-gray-700 text-lg leading-relaxed text-center">
-                {texto.texto1}
-                {texto.texto2 && <><br /><br />{texto.texto2}</>}
-                {texto.texto3 && <><br /><br />{texto.texto3}</>}
+                {texto.texto1} 
+                {texto.texto2}
+                {texto.texto3}
               </p>
             </motion.div>
           ))}
