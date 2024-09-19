@@ -1,10 +1,15 @@
 'use client'
 
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import sectionsData from "../../api/sobreNosotros/visionMision.json"
+
+// Definir tipos para las secciones
+interface Section {
+  title: string;
+  content: string;
+}
 
 const fadeInScale = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -24,12 +29,23 @@ const stagger = {
 }
 
 export function MissionVisionTerms() {
-  const { sections } = sectionsData
-  const controls = useAnimation()
+  const [sections, setSections] = useState<Section[]>([]); // Estado para almacenar las secciones
+  const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
+
+  // Fetch para obtener los datos del archivo JSON desde la carpeta public
+  useEffect(() => {
+    const fetchSections = async () => {
+      const response = await fetch('/sobreNosotros/visionMision.json'); // URL relativa al archivo en la carpeta public
+      const data = await response.json();
+      setSections(data.sections); // Actualiza el estado con las secciones
+    };
+    
+    fetchSections();
+  }, []); // Ejecuta el fetch una sola vez al montar el componente
 
   useEffect(() => {
     if (inView) {
@@ -37,10 +53,11 @@ export function MissionVisionTerms() {
     } else {
       controls.start("hidden")
     }
-  }, [controls, inView])
+  }, [controls, inView]);
 
   return (
-<section className="py-20 bg-gradient-to-r from-yellow-100 to-pink-100"><motion.div
+    <section className="py-20 bg-gradient-to-r from-yellow-100 to-pink-100">
+      <motion.div
         className="container mx-auto px-4"
         initial="hidden"
         animate={controls}

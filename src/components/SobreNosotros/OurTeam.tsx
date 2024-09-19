@@ -1,17 +1,16 @@
 'use client'
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import personasData from "../../api/sobreNosotros/equipoTrabajo.json"
 
 interface Persona {
   id: number;
-  "name?": string;
-  "url?": string;
-  "info?": string;
-  "role?"?: string;  // Added this line to include the role property
+  name: string;
+  url: string;
+  info: string;
+  role?: string;
 }
 
 const fadeInUp = {
@@ -25,7 +24,25 @@ const fadeInUp = {
 
 export function OurTeam() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const personas: Persona[] = personasData
+  const [personas, setPersonas] = useState<Persona[]>([])
+
+  useEffect(() => {
+    // Fetch data from the public folder
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/sobreNosotros/equipoTrabajo.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data: Persona[] = await response.json();
+        setPersonas(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const nextPerson = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % personas.length)
@@ -33,6 +50,10 @@ export function OurTeam() {
 
   const prevPerson = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + personas.length) % personas.length)
+  }
+
+  if (personas.length === 0) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -67,17 +88,17 @@ export function OurTeam() {
             <div className="relative w-full h-full transition-transform duration-500 transform-style-3d hover:rotate-y-180">
               <div className="absolute w-full h-full backface-hidden bg-gradient-to-br from-yellow-50 to-pink-50 rounded-lg shadow-xl p-4 flex flex-col items-center justify-center">
                 <Image
-                  src={personas[currentIndex]["url?"] || "/placeholder.svg"}
-                  alt={personas[currentIndex]["name?"] || "Team member"}
+                  src={personas[currentIndex].url || "/placeholder.svg"}
+                  alt={personas[currentIndex].name || "Team member"}
                   width={150}
                   height={150}
                   className="rounded-full object-cover mb-4"
                 />
-                <h3 className="text-xl font-semibold text-amber-800 mb-2">{personas[currentIndex]["name?"] || "Team Member"}</h3>
-                <p className="text-gray-600 text-sm">{personas[currentIndex]["role?"] || "Team Role"}</p>
+                <h3 className="text-xl font-semibold text-amber-800 mb-2">{personas[currentIndex].name || "Team Member"}</h3>
+                <p className="text-gray-600 text-sm">{personas[currentIndex].role || "Team Role"}</p>
               </div>
               <div className="absolute w-full h-full backface-hidden bg-gradient-to-tl from-yellow-50 to-pink-50 rounded-lg shadow-xl p-4 flex flex-col items-center justify-center rotate-y-180">
-                <p className="text-amber-800 text-center">{personas[currentIndex]["info?"] || "No information available"}</p>
+                <p className="text-amber-800 text-center">{personas[currentIndex].info || "No information available"}</p>
               </div>
             </div>
           </motion.div>

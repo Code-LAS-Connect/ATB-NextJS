@@ -1,10 +1,17 @@
 'use client'
 
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Plane, Heart, Globe, Users } from "lucide-react"
-import textosData from "../../api/sobreNosotros/SobreNosotros.json"
+
+// Define el tipo del JSON
+interface Texto {
+  id: number;
+  texto1: string;
+  texto2?: string;
+  texto3?: string;
+}
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -33,12 +40,27 @@ const iconAnimation = {
 }
 
 export function AboutUs() {
-  const { texts } = textosData
+  const [texts, setTexts] = useState<Texto[]>([]) // Define el tipo del estado
   const controls = useAnimation()
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
   })
+
+  // Reemplazar la importación con fetch y tipar el resultado
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/sobreNosotros/SobreNosotros.json")
+        const data = await response.json() as { texts: Texto[] } // Establecemos el tipo del JSON
+        setTexts(data.texts)
+      } catch (error) {
+        console.error("Error fetching JSON data:", error)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   useEffect(() => {
     if (inView) {
